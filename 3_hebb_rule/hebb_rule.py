@@ -31,7 +31,6 @@ class Hebb:
             print("\tw" + str(w) + " = " + str(pesos[w]))
         print("\twb = " + str(pesos[-1]))
 
-
 if __name__ == '__main__':
-    hebb = Hebb([([1,1], 1), ([1,-1], -1), ([-1, 1], -1), ([-1, -1], -1)])
+    hebb = Hebb([([1, 1], 1), ([1, -1], -1), ([-1, 1], -1), ([-1, -1], -1)])
     hebb.print(hebb.train())
