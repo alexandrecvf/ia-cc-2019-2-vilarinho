@@ -1,7 +1,6 @@
 import sys
 
 from Hebb import Hebb
-from Hebb import Hebb
 from Perceptron import Perceptron
 
 from PySide2 import QtCore
