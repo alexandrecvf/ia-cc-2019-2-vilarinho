@@ -9,6 +9,7 @@ from perceptron import Perceptron
 
 NUM_OF_NEURONS = 10
 
+
 class Gui:
     def __init__(self):
         # loading widgets elements from ui file
@@ -51,7 +52,7 @@ class Gui:
         self.font_b = []
         self.populate_training_set()
 
-        #neurons
+        # neurons
         self.neuron_a = []
         self.neuron_b = []
         self.resp_net_a = []
@@ -872,7 +873,7 @@ class Gui:
             self.pixels[79].setIcon(self.white)
             self.pixels[79].setToolTip("white")
             self.inputs[79] = -1
-    
+
     def on_run_pushbutton_clicked(self):
         if (self.characterComboBox.currentText() == 'Caracter 1'):
             percep = Perceptron()
@@ -904,7 +905,6 @@ class Gui:
                         s = s + ', ' + str(i)
             self.statusbar.showMessage('Número reconhecido: ' + s)
 
-
     def on_train_pushbutton_clicked(self):
         if (self.characterComboBox.currentText() == 'Caracter 1'):
             self.neuron_a = []
@@ -923,14 +923,12 @@ class Gui:
             print(self.neuron_b)
             self.statusbar.showMessage("Rede Treinada")
 
-
-
     def populate_pixels_list(self):
         # Hard coding: display 10x8
         for i in range(10):
             for j in range(8):
                 self.pixels.append(self.window.findChild(
-                    QPushButton, "pixel"+str(i+1)+str(j+1)))
+                    QPushButton, "pixel" + str(i + 1) + str(j + 1)))
                 self.pixels[-1].clicked.connect(getattr(self, "on_pixel_" + str(i) + str(j) + "_clicked"))
 
     def populate_training_set(self):
@@ -958,7 +956,7 @@ class Gui:
                 else:
                     aux.append((self.font_a[j], -1))
             self.training_set_a.append(aux)
-        #print(self.training_set_a)
+        # print(self.training_set_a)
 
         # =========================================================== #
 
@@ -985,7 +983,7 @@ class Gui:
                 else:
                     aux.append((self.font_b[j], -1))
             self.training_set_b.append(aux)
-        #print(self.training_set_b)
+        # print(self.training_set_b)
 
     def update_display(self):
         for p in range(len(self.pixels)):
